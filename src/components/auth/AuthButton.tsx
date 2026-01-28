@@ -35,7 +35,7 @@ export const AuthButton = () => {
           onClick={signOut}
           className="text-sm font-medium text-slate-400 hover:text-white transition"
         >
-          Logout
+          로그아웃
         </button>
       </div>
     );
@@ -46,7 +46,7 @@ export const AuthButton = () => {
       href="/login"
       className="px-5 py-2 rounded-full bg-blue-600 text-white text-sm font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/20"
     >
-      Login
+      로그인
     </a>
   );
 };
