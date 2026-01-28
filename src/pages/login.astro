@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { LoginForm } from "@/components/auth/LoginForm";
+---
+
+<Layout
+  title="로그인 | SION.LOG"
+  description="간편 로그인을 통해서 댓글을 남겨보세요"
+>
+  <section class="min-h-[80vh] flex items-center justify-center py-12 px-6">
+    <div class="w-full flex justify-center">
+      <LoginForm client:load />
+    </div>
+  </section>
+</Layout>

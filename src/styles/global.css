@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/PretendardVariable.woff2") format("woff2-variations");
+}
+
+@theme {
+  --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #3b82f6;
+}
+
+@layer base {
+  html {
+    @apply bg-[#0f172a] text-slate-200 antialiased;
+    font-family: var(--font-sans);
+  }
+}

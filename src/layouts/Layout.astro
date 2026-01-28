@@ -1,0 +1,60 @@
+---
+import "@/styles/global.css";
+import { AuthButton } from "@/components/auth/AuthButton";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "My Study Blog",
+  description = "배운 것을 기록으로 남기는 블로그",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko" class="bg-[#0f172a]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="text-slate-200 antialiased font-['Inter',sans-serif]">
+    <header
+      class="sticky top-0 z-50 w-full backdrop-blur-md bg-[#0f172a]/70 border-b border-slate-800"
+    >
+      <div
+        class="max-w-5xl mx-auto flex h-16 items-center justify-between px-6"
+      >
+        <a
+          href="/"
+          class="text-xl font-extrabold tracking-tighter bg-linear-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent hover:opacity-80 transition"
+        >
+          SION.LOG
+        </a>
+        <nav class="flex items-center gap-8 text-sm font-medium">
+          <a href="/" class="text-slate-400 hover:text-white transition">Home</a
+          >
+          <a href="/archive" class="text-slate-400 hover:text-white transition"
+            >Archive</a
+          >
+          <AuthButton client:load />
+        </nav>
+      </div>
+    </header>
+  </body>
+
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <slot />
+  </main>
+
+  <footer class="border-t border-slate-800 bg-[#0f172a] py-12">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="text-sm text-slate-500">
+        © 2026 Sion. My Front-End Study Page.
+      </p>
+    </div>
+  </footer>
+</html>
